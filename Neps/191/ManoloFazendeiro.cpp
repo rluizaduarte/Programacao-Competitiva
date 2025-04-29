@@ -12,14 +12,18 @@ int main(){
     }
 
     int totalCarrots = 0, q, iBegin, iEnd, jBegin, jEnd;
+    cin >> q;
     for(int k = 0; k < q; k++){
         cin >> iBegin  >> jBegin >> iEnd >> jEnd;
-        // for(int i = iBegin - 1; i < iEnd - 1; i++){
-        //     for(int j = jBegin - 1; j < jEnd - 1; j++){
-        //         totalCarrots += plant[i][j];
-        //     }
-        // }
+        for(int i = iBegin - 1; i < iEnd - 1; i++){
+            for(int j = jBegin - 1; j < jEnd - 1; j++){
+                totalCarrots += plant[i][j];
+		plant[i][j] = 0;
+            }
+        }
     }
+
+    cout << totalCarrots << endl;
 
     return 0;
 }
