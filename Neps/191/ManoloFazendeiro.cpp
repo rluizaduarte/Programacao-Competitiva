@@ -15,8 +15,8 @@ int main(){
     cin >> q;
     for(int k = 0; k < q; k++){
         cin >> iBegin  >> jBegin >> iEnd >> jEnd;
-        for(int i = iBegin - 1; i < iEnd - 1; i++){
-            for(int j = jBegin - 1; j < jEnd - 1; j++){
+        for(int i = iBegin - 1; i < iEnd; i++){
+            for(int j = jBegin - 1; j < jEnd; j++){
                 totalCarrots += plant[i][j];
 		plant[i][j] = 0;
             }
