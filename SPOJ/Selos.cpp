@@ -2,25 +2,22 @@
 using namespace std;
 
 int main(){
-    int n;
+    long long n;
     cin >> n;
+
     bool possivel = false;
-    for(int i = (n/2); i < n; i++){
-        for(int j = 2; j < n; j++){
-            if((i * j) == n){
-                cout << 'S' << endl;
-                possivel = true;
-                break;
-            }
-        }
-        if(possivel){
+    for(int i = 2; i <= sqrt(n); i++){
+        if(n % i == 0){
+            possivel = true;
             break;
         }
     }
-    if(!possivel){
+
+    if(possivel){
+        cout << 'S' << endl;
+    }else{
         cout << 'N' << endl;
     }
 
     return 0;
 }
-
