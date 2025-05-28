@@ -8,8 +8,13 @@ int main(){
 	for(int i = 0; i < t; i++){
 		cin >> n >> m;
 		
-		int nDeUnsNecessario = (n * 2 + m * 2) - 4;
-		// pra ser uma imagem nao corrompida, precisa ter pelo menosas bordas iguas a um
+		int nDeUnsNecessario;
+		if(m == 1 || n == 1){
+			nDeUnsNecessario = max(m,n);
+		}else{
+			nDeUnsNecessario = (n * 2 + m * 2) - 4;
+			// pra ser uma imagem nao corrompida, precisa ter pelo menosas bordas iguas a um
+		}
 
 		int imagem[n][m];
 		for(int j = 0; j < n; j++){
