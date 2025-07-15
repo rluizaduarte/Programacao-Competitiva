@@ -56,7 +56,7 @@ int main(){
 		int movimentos;
 		if(nDeUnsNaImagem < nDeUnsNecessario){
 			movimentos = -1;
-		}else if((nDeUnsNaImagem - unsNaBorda) > zerosNaBorda){
+		}else if(zerosNaBorda > (nDeUnsNaImagem - unsNaBorda)){
 			movimentos = -1;
 		}else{
 			movimentos = zerosNaBorda;
