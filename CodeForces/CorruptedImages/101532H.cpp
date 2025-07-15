@@ -13,7 +13,7 @@ int main(){
 			char linha;
 			for(int k = 0; k < m; k++){
 				cin >> linha;
-				imagem[j][k] = linha
+				imagem[j][k] = linha;
 			}
 		}
 
@@ -26,11 +26,12 @@ int main(){
 					if(imagem[j][k] == 0){
 						zerosNaBorda++;	
 					}
-				else{
+				}else{
 					if(imagem[j][k] == 1){
 						unsDentro++;
 					}
 				}
+		    }
 		}
 		
 		if(unsDentro >= zerosNaBorda){
