@@ -30,9 +30,10 @@ int main(){
 
 		int nDeUnsNaImagem = 0;
 		// contador que diz quantos uns há
-		int zerosNaBorda = 0;
+		int zerosNaBorda = 0; 
 		int unsNaBorda = 0;
-		// contador que diz quantos movimentos serão necessários
+		// conta quantos uns e quantos zeros ha na borda 
+		// diz o n de movimentos necessarios
 		
 		for(int j = 0; j < n; j++){
 			for(int k = 0; k < m; k++){
@@ -55,7 +56,7 @@ int main(){
 		int movimentos;
 		if(nDeUnsNaImagem < nDeUnsNecessario){
 			movimentos = -1;
-		}else if((nDeUnsNaImagem - unsNaBorda) < zerosNaBorda){
+		}else if((nDeUnsNaImagem - unsNaBorda) > zerosNaBorda){
 			movimentos = -1;
 		}else{
 			movimentos = zerosNaBorda;
