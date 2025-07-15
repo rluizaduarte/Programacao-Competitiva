@@ -40,6 +40,7 @@ int main(){
 			cout << -1 << endl;
 		}
 	}
-
+	
+	// pq minha solucao n funciona? 
 	return 0;
 }
