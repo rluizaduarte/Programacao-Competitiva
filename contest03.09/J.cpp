@@ -46,7 +46,7 @@ int main(){
     
     if(mn > 10){
         resposta = -1;
-    }else if(cartas[mn - 1] > 0){
+    }else if(cartas[mn - 1] > 0) {
         resposta = mn;
     }else{
         while(cartas[mn - 1] == 0){
