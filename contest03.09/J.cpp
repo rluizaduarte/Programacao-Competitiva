@@ -40,28 +40,24 @@ int main(){
         cartas[comuns - 1]--;
     }
     
-    if(rodadas == 8 && maria != 23){
+    int JoaoEstourar = 24 - joao;
+    int MariaGanhar = 23 - maria;
+    int mn = min(JoaoEstourar, MariaGanhar);
+    
+    if(mn > 10){
         resposta = -1;
-    }else if (maria > 23){
-        resposta = -1;
-    }else if(joao == 23){
-        resposta = -1;
-    }else if(joao > 23){
-        resposta = 1;
-        while(cartas[resposta - 1] == 0){
-            resposta++;
-        }
-        if(maria + resposta > 23){
-            resposta = -1;
-        }
+    }else if(cartas[mn - 1] > 0){
+        resposta = mn;
     }else{
-        int faltaJoaoEstourar = 24 - joao;
-        int faltaMariaGanhar = 23 - maria;
-        resposta = min(faltaMariaGanhar, faltaJoaoEstourar);
-        if(cartas[resposta - 1] == 0){
-            while(cartas[resposta - 1] == 0 || (maria + resposta < 23 && joao + resposta < 24)){
-                resposta++;
-            }   
+        while(cartas[mn - 1] == 0){
+            mn++;
+        }
+        if((maria + mn) > 23){
+            resposta = -1;
+        }else if((joao + mn) == 23){
+            resposta = -1;
+        }else{
+            resposta = mn;
         }
     }
     
