@@ -1,30 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
+#define TAM 1000001
+ 
 int main(){
-    long long int n;
+    int i, n, x, vet[TAM] {0}, flechas = 0;
     cin >> n;
-    
-    long long int baloes[n];
-    for(int i = 0; i < n; i++){
-        cin >> baloes[i];
-    }
-    
-    long long int h, flechas = 0;
-    for(int i = 0; i < n; i++){
-        if(baloes[i] != 0){
-            h = baloes[i] - 1;
-            baloes[i] = 0;
+ 
+    for(i = 0; i < n; i++){
+        cin >> x;
+        if(vet[x] > 0){
+            vet[x]--;
+        }else{
             flechas++;
-            for(int j = i + 1; j < n; j++){
-                if(baloes[j] == h){
-                    baloes[j] = 0;
-                    h--;
-                }
-            }
         }
+        vet[x-1]++;
     }
-    
+ 
     cout << flechas << endl;
     
     return 0;
